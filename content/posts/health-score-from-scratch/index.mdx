@@ -40,7 +40,7 @@ Choosing which signals to use comes from a discussion with any subject matter ex
 
 The requirements for the signal selection are:
 
-* You will also want to pick something you can measure today or add the signal easily. It will invalidate the exercise if half the signals you find essential are not possible to measure.
+* Pick something you can measure today or add the signal easily. It will invalidate the exercise if half the signals you find essential are not possible to measure.
 * The signal needs to be measured by a numerical value.
 * Avoid picking correlated signals. For instance, the number of times logged in and page views could be correlated; if that's the case, only pick one.
 
@@ -70,7 +70,7 @@ The calculated signals show how strong a particular signal is (according to the 
 
 ### Step 6: Apply the Weights to Existing Customers
 
-The final step is to apply the weights to actual user data. In a spreadsheet, add the user data and the relevant signal data. Then use the weights and add the intercept to calculate a score. I have an example in the spreadsheet, but the formula will look something like this:
+The final step is to apply the weights to actual user data. In a spreadsheet, add the user data and the relevant signal data. Then use the weights and add the intercept to calculate a score. I have an [example](https://docs.google.com/spreadsheets/d/1qSShFvUodWjvm85mPgwt_awtXr-s6ZmHc6BiZzvX2M8/edit?usp=sharing) in the spreadsheet, but the formula will look something like this:
 
 ```
 =MIN(Analysis!$H$3+(Analysis!$G$3*A1313)+(Analysis!$F$3*B1313)+(Analysis!$E$3*C1313)+(Analysis!$D$3*D1313)+(Analysis!$C$3*E1313)+(Analysis!$B$3*F1313)+(Analysis!$A$3*G1313),0.99)
@@ -102,10 +102,7 @@ You may have missed some signals in the initial model when investigating churn. 
 
 You can combine weighted data with survey data to get information about the customer that's not available by investigating usage. CSAT, NPS, and CES surveys can give insights into the customers' attitudes toward the company. Also, additional information about support tickets or financial health could add more context.
 
-The process is designed to be simple, quick, and cost-effective. Working solely on a spreadsheet could scale better as your company grows its customer base and the customer success team. Customer success tools can handle hundreds of signals (instead of the ten or fewer we are using). Using complex analysis can provide detailed insights into your customers' activity and how that relates to churn. They can also help manage a growing customer success team by auto-assigning new customers and improving customer communication.
-
-Conclusion
-
+The process is designed to be simple, quick, and cost-effective. Working solely on a spreadsheet will eventually run into scale issues better as your company grows its customer base and the customer success team. Customer success tools can handle hundreds of signals (instead of the ten or fewer we are using). Using complex analysis can provide detailed insights into your customers' activity and how that relates to churn. They can also help manage a growing customer success team by auto-assigning new customers and improving customer communication.
 
 
 
