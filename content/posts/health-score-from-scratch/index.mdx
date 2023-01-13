@@ -1,0 +1,128 @@
+---
+title:  Health Score from Scratch
+date: 2022-06-14
+description: One of the initial tasks when starting a customer success team is to start scoring customer health. If starting from scratch, you need to figure out how to segment customers, which signals to use for scoring, and which weights to assign those signals. 
+tags:
+  - Excel
+  - Customer Success
+banner: ./coaching_support_1.webp
+---
+
+## Introduction
+
+One of the initial tasks when starting a customer success team is to start scoring customer health. If starting from scratch, you need to figure out how to segment customers, which signals to use for scoring, and which weights to assign those signals. To make it easier on yourself, you will undoubtedly search the interwebs for a "customer success solution." The number of results returned will be in the millions. Instead of reading through all the marketing materials, you perform a follow-up search for "how to choose a customer success solution" or "best customer success solution 2022," which returns review sites claiming to list the "top 20 customer success solutions for 2022" (even though they created the article in 2019).
+
+I want to offer an alternative to investing in a customer success solution. An option that you likely already have access to. A choice that you can implement in a day instead of weeks or months. An alternative that you both love and hate.  
+
+A spreadsheet.
+
+Spreadsheets can handle health scores and many other customer success initiatives without the extra cost of purchasing a new solution or having engineering implement a solution. We can have a working customer health score procedure with spreadsheets in a day or two without any historical data. You need intuition, a spreadsheet, and the help of a couple of other colleagues.
+
+
+## What is a Customer Health Score
+
+I'll offer a brief definition, but there are entire books on the subject if you want to dive deeper. The health score measures a customer's relationship with your product or company. Usually, a health score is combined with customer segmentation (value/behavioral/customer journey/geographic-based) to decide how you will interact with a customer.
+
+
+## The Process
+
+We want to use usage signals as a predictor of an expected outcome. The main priority of a Customer Success team is to reduce churn, so we'll start with renewing as the desired outcome.
+
+### Step 1: Pick a customer segment
+
+Segment customers into groups of common usage patterns. For instance, do customers behave the same throughout their entire lifecycle? Or do you find usage differs for customers at the 30, 90, or 180-day mark? Do you have different plan levels (starter, professional, enterprise) that may perform additional actions? Are there distinctions in each stage of the customer journey?
+
+To start, pick the segment that is most important to you.
+
+### Step 2: Gather Signals
+
+Choosing which signals to use comes from a discussion with any subject matter experts (SME), customer success managers (CSMs), customer support, sales, or product managers (PMs). Take 15 minutes, and using the segment from the first step as context, come up with the 6 to 10 most important signals. Examples would be the number of times logged in, the number of pages visited, or the number of widgets bought.
+
+The requirements for the signal selection are:
+
+* You will also want to pick something you can measure today or add the signal easily. It will invalidate the exercise if half the signals you find essential are not possible to measure.
+* The signal needs to be measured by a numerical value.
+* Avoid picking correlated signals. For instance, the number of times logged in and page views could be correlated; if that's the case, only pick one.
+
+The health score can contain more than product usage (support interactions, surveys, contract growth, and more), but product usage will typically give you the most bang for your buck. You can use a combination of metrics based on frequency (how many times a customer performed an action), depth (usage of principal features), time-based (how many times a customer performed an act in the last X days/weeks/months), or behavior changes (how many users logged in this week versus last week).
+
+Why only 10? You'll see later that this process doesn't require historical data; it is based on the judgment of experts. I have found that the mental gymnastics needed to process more than ten signals reduces the efficacy of the exercise. Also, the Pareto principle applies here, where 80% of the churn prediction comes from 20% of the signals.
+
+### Step 3: Generate Sample Data
+
+You can generate realistic data or use actual customer data if you have it. You are looking for 25 to 50 rows of data. In the next step, you will score that data. If only one person is evaluating data, I lean towards 50 rows.
+
+Each row contains a sample measurement for each signal. If you are generating fake data, ensure that the signals fall within the expected range for the segment you selected in step 1.
+
+### Step 4: Score Each Scenario
+
+We will use Brunswik's LENS model for inspiration when scoring the rows using the judgment of experts. You may be on your own, or you can call on the same people that helped you in step 2. Using the date from each row as a cue, have the expert predict how likely the user is to renew. I typically use a 0.01 to 0.99, where the higher the number, the more likely the renewal.  
+
+Gather all of their predictions and row data into one spreadsheet.
+
+### Step 5: Use Linear Regression to Generate Weights for the Signals
+
+After gathering the data, we need to generate the weights. Linear regression is a tool that most people know from math or statistics classes in school. I'm not going to go over the math behind it. Still, linear regression helps model the relationship between a dependent variable (our expert scores) and a set of independent variables (our signals).
+
+A standard function for performing linear regression in spreadsheets is called `LINEST.` For the 'y' or 'dependent variable,' use the range of scores. You will use all the signals for the 'x' or independent variables. You can view an [example](https://docs.google.com/spreadsheets/d/1qSShFvUodWjvm85mPgwt_awtXr-s6ZmHc6BiZzvX2M8/edit?usp=sharing) spreadsheet to use the LINEST function.
+
+The calculated signals show how strong a particular signal is (according to the experts).
+
+### Step 6: Apply the Weights to Existing Customers
+
+The final step is to apply the weights to actual user data. In a spreadsheet, add the user data and the relevant signal data. Then use the weights and add the intercept to calculate a score. I have an example in the spreadsheet, but the formula will look something like this:
+
+```
+=MIN(Analysis!$H$3+(Analysis!$G$3*A1313)+(Analysis!$F$3*B1313)+(Analysis!$E$3*C1313)+(Analysis!$D$3*D1313)+(Analysis!$C$3*E1313)+(Analysis!$B$3*F1313)+(Analysis!$A$3*G1313),0.99)
+```
+
+I use MIN here because I don't want it to go over .99. Sometimes, if someone has a substantial value for a signal, the health score will exceed 1.0.  
+
+How can this help?
+
+Now you have a baseline for your customers, so you have something to compare to going forward. If you run a customer success initiative, you can see how it has affected a particular set of health scores.
+
+I recommend updating the scores at least once a month to look for changes in a customer's health score. If a customer drops .10 or more, maybe it's an excellent time to dig in and see what's changed for that customer. Most likely, there are signs that a customer will churn well before they do. Regular scoring updates help you respond to declines in usage sooner.
+
+You can also decide how to concentrate the customer success team's efforts. You can subdivide customers based on health score (.80+ is green, .60 to .80 is yellow, and below .6 is red) and look at those groups and opportunities to contact the customer. Do they share common usage patterns? Would custom education or training help? If it's a high-value customer, you can reach out immediately or plan a webinar if there are many lower-value customers.
+
+You can also make this part of the standard reporting. How many customers do you have? How many customers are in a green/yellow/red state? What is the health score for upcoming renewals? Responses to all those questions will interest leadership.
+
+## How can this be Improved?
+
+How good is this system? The goal here is not to have an algorithm that will 100% predict churn but rather an algorithm that can guide future decisions on interacting with customers and help measure those interactions. 
+
+This system has a high value-to-cost ratio, particularly if you don't have any health scoring today. There are opportunities to improve the accuracy of the scores and reduce the effort to collect the data.
+
+Linear regression is a complex topic, and there are many ways to increase scoring accuracy. They are beyond the scope of this post, but issues like normalizing, centering, dummy variables, multicollinearity, stepwise regression, interaction terms, and much more can increase churn prediction.
+
+Look for ways to automate the scoring. Make the reporting available in real-time, and do not rely on one person to copy and paste data into a spreadsheet. If you already have user data in a database, it would be easy to query the data and apply the weights to the signals. 
+
+You may have missed some signals in the initial model when investigating churn. Or that specific signals were less important than you first thought. Feel free to redo this process with a different set of variables. Comparing the new score to the old one is an excellent way to judge if one model is better. 
+
+You can combine weighted data with survey data to get information about the customer that's not available by investigating usage. CSAT, NPS, and CES surveys can give insights into the customers' attitudes toward the company. Also, additional information about support tickets or financial health could add more context.
+
+The process is designed to be simple, quick, and cost-effective. Working solely on a spreadsheet could scale better as your company grows its customer base and the customer success team. Customer success tools can handle hundreds of signals (instead of the ten or fewer we are using). Using complex analysis can provide detailed insights into your customers' activity and how that relates to churn. They can also help manage a growing customer success team by auto-assigning new customers and improving customer communication.
+
+Conclusion
+
+
+
+
+## Conclusion
+
+One of the more significant benefits of this exercise is understanding what goes into a customer health score. Which activities are essential and which are not.
+
+If you decide to purchase a third-party solution, this process will have some benefits:
+
+* You can benchmark their Health Score versus your spreadsheet version.
+* You now know what essential indicators of churn are.
+* You can better put a price on how automating Health Score saves time (great when justifying to your boss).
+
+You can change the weights as your business adds new features and replicate this exercise for each segment you have.
+
+I enjoy hearing stories about how people implement this process at their workplaces. Feel free to connect with me on [Linkedin](https://www.linkedin.com/in/michael-beale-163a4670) if you have something to share or are looking for advice.  
+
+Happy scoring!
+
+
