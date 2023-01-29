@@ -7,6 +7,7 @@ module.exports = {
   siteMetadata: {
     siteTitle: 'MB',
     siteTitleAlt: `Michael Beale | Champion of the Customer`,
+    siteDescription: `I'm Michael - A Customer Experience professional based out of Holly Springs, NC. Currently I'm a Technical Support Manager at SolarWinds, Inc.`,
   },
   plugins: [
     {
@@ -92,7 +93,7 @@ module.exports = {
             site {
               siteMetadata {
                 title: siteTitle
-                description: "I'm Michael - A Customer Experience professional based out of Holly Springs, NC. Currently I'm a Technical Support Manager at SolarWinds, Inc."
+                description: siteDescription
                 siteUrl
                 site_url: siteUrl
               }
