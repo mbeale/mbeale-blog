@@ -92,7 +92,7 @@ module.exports = {
             site {
               siteMetadata {
                 title: siteTitle
-                description: "I'm Michael - A Customer Experience professional based out of Holly Springs, NC. Currently I'm a Technical Support Manager at SolarWinds, Inc.",
+                description: "I'm Michael - A Customer Experience professional based out of Holly Springs, NC. Currently I'm a Technical Support Manager at SolarWinds, Inc."
                 siteUrl
                 site_url: siteUrl
               }
