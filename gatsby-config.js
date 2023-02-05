@@ -27,6 +27,10 @@ module.exports = {
         ],
         externalLinks: [
           {
+            name: `Email`,
+            url: `mailto:me@themichaelbeale.com`,
+          },
+          {
             name: `Linkedin`,
             url: `https://www.linkedin.com/in/michael-beale-163a4670/`,
           },
