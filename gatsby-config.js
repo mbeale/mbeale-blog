@@ -6,6 +6,7 @@ const googleAnalyticsTrackingId = process.env.GOOGLE_ANALYTICS_ID
 module.exports = {
   siteMetadata: {
     siteTitle: 'MB',
+    siteUrl: 'http://themichaelbeale.com',
     siteTitleAlt: `Michael Beale | Champion of the Customer`,
     siteDescription: `I'm Michael - A Technical Support professional based out of Holly Springs, NC. Currently I'm a Technical Support Manager at SolarWinds, Inc.`,
   },
@@ -61,8 +62,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `minimal-blog - @lekoarts/gatsby-theme-minimal-blog`,
-        short_name: `minimal-blog`,
+        name: `Michael Beale - Technical Support Professional`,
+        short_name: `themichaelbeale.com`,
         description: `I'm Michael - A Technical Support professional based out of Holly Springs, NC. Currently I'm a Technical Support Manager at SolarWinds, Inc.`,
         start_url: `/`,
         background_color: `#fff`,
@@ -129,7 +130,7 @@ module.exports = {
               }
             `,
             output: `rss.xml`,
-            title: `Minimal Blog - @lekoarts/gatsby-theme-minimal-blog`,
+            title: `Michael Beale - Technical Support Expert`,
           },
         ],
       },
