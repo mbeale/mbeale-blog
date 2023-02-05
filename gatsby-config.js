@@ -1,4 +1,4 @@
-require(`dotenv`).config()
+crequire(`dotenv`).config()
 
 const shouldAnalyseBundle = process.env.ANALYSE_BUNDLE
 const googleAnalyticsTrackingId = process.env.GOOGLE_ANALYTICS_ID
@@ -7,7 +7,7 @@ module.exports = {
   siteMetadata: {
     siteTitle: 'MB',
     siteTitleAlt: `Michael Beale | Champion of the Customer`,
-    siteDescription: `I'm Michael - A Customer Experience professional based out of Holly Springs, NC. Currently I'm a Technical Support Manager at SolarWinds, Inc.`,
+    siteDescription: `I'm Michael - A Technical Support professional based out of Holly Springs, NC. Currently I'm a Technical Support Manager at SolarWinds, Inc.`,
   },
   plugins: [
     {
@@ -63,7 +63,7 @@ module.exports = {
       options: {
         name: `minimal-blog - @lekoarts/gatsby-theme-minimal-blog`,
         short_name: `minimal-blog`,
-        description: `I'm Michael - A Customer Experience professional based out of Holly Springs, NC. Currently I'm a Technical Support Manager at SolarWinds, Inc.`,
+        description: `I'm Michael - A Technical Support professional based out of Holly Springs, NC. Currently I'm a Technical Support Manager at SolarWinds, Inc.`,
         start_url: `/`,
         background_color: `#fff`,
         theme_color: `#6B46C1`,
