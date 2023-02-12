@@ -24,6 +24,10 @@ module.exports = {
             title: `About`,
             slug: `/about`,
           },
+          {
+            title: `Problem Solving`,
+            slug: `/sps`,
+          },
         ],
         externalLinks: [
           {
