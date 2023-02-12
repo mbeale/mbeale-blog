@@ -17,16 +17,16 @@ module.exports = {
       options: {
         navigation: [
           {
+            title: `Problem Solving`,
+            slug: `/sps`,
+          },
+          {
             title: `Blog`,
             slug: `/blog`,
           },
           {
             title: `About`,
             slug: `/about`,
-          },
-          {
-            title: `Problem Solving`,
-            slug: `/sps`,
           },
         ],
         externalLinks: [
