@@ -7,8 +7,8 @@ module.exports = {
   siteMetadata: {
     siteTitle: 'MB',
     siteUrl: 'http://themichaelbeale.com',
-    siteTitleAlt: `Michael Beale | Champion of the Customer`,
-    siteDescription: `I'm Michael - A Technical Support professional based out of Holly Springs, NC. Currently I'm a Technical Support Manager at SolarWinds, Inc.`,
+    siteTitleAlt: `Michael Beale | Developing Caveman`,
+    siteDescription: `I'm Michael - A Developing Caveman.  I harness oldfangled creativity and innovation to confront modern problems.`,
   },
   plugins: [
     {
@@ -16,10 +16,6 @@ module.exports = {
       // See the theme's README for all available options
       options: {
         navigation: [
-          {
-            title: `Problem Solving`,
-            slug: `/sps`,
-          },
           {
             title: `Blog`,
             slug: `/blog`,
@@ -37,6 +33,10 @@ module.exports = {
           {
             name: `Linkedin`,
             url: `https://www.linkedin.com/in/michael-beale-163a4670/`,
+          },
+          {
+            name: `X`,
+            url: `https://twitter.com/mbeale_cx`,
           },
           {
             name: `Github`,
@@ -70,9 +70,9 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Michael Beale - Technical Support Professional`,
+        name: `Michael Beale - Developing Caveman`,
         short_name: `themichaelbeale.com`,
-        description: `I'm Michael - A Technical Support professional based out of Holly Springs, NC. Currently I'm a Technical Support Manager at SolarWinds, Inc.`,
+        description: `I'm Michael - A Developing Caveman.  I harness oldfangled creativity and innovation to confront modern problems.`,
         start_url: `/`,
         background_color: `#fff`,
         theme_color: `#6B46C1`,
@@ -138,7 +138,7 @@ module.exports = {
               }
             `,
             output: `rss.xml`,
-            title: `Michael Beale - Technical Support Expert`,
+            title: `Michael Beale - Developing Caveman`,
           },
         ],
       },
